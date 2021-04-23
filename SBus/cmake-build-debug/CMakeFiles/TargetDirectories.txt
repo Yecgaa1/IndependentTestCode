@@ -1,0 +1,3 @@
+C:/GitProject/Boat/IndependentTestCode/SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir
+C:/GitProject/Boat/IndependentTestCode/SBus/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitProject/Boat/IndependentTestCode/SBus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
