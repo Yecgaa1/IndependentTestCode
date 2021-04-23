@@ -1,0 +1,3 @@
+C:/GitProject/Boat/IndependentTestCode/USART/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/GitProject/Boat/IndependentTestCode/USART/cmake-build-debug/CMakeFiles/USART.elf.dir
+C:/GitProject/Boat/IndependentTestCode/USART/cmake-build-debug/CMakeFiles/edit_cache.dir
