@@ -126,7 +126,8 @@ static struct platform_data_s compass_pdata = {
  *TODO：将返回值添加到inv_get_sensor_type_xxx API中以进行区分
  *在新数据和陈旧数据之间。
  */
-static void read_from_mpl(void)
+
+void read_from_mpl(void)
 {
     long msg, data[9];
     int8_t accuracy;
@@ -875,7 +876,7 @@ void mpu_test(void)
     mpu_set_dmp_state(1);
     hal.dmp_on = 1;
 
-    while(1)
+    while(0)
     {
 
         unsigned long sensor_timestamp;

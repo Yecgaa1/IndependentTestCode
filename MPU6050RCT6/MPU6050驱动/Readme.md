@@ -15,11 +15,12 @@
 将**MPU6050**文件夹添加进工程，并且开始修改cmake文件把对应的段落放在对应的相同位置，比如include_directories和别的include_directories放在一起
 
 ```cmake
-include_directories(Core/MPU6050 Core/MPU6050/driver/eMPL Core/MPU6050/driver/include Core/MPU6050/driver/stm32L Core/MPU6050/mllite Core/MPU6050/eMPL-hal Core/MPU6050/mpl)#导入相对应的目录否则会include错误
-
 add_definitions(-DMPL_LOG_NDEBUG=1 -DMPU6050 -DEMPL -DUSE_DMP -DEMPL_TARGET_STM32F4)#定义全局宏变量，按照下面的说明修改
 
-link_directories(Core/MPU6050/libmpllib)#链接静态库文件.a
+include_directories(Core/MPU6050 Core/MPU6050/driver/eMPL Core/MPU6050/driver/include Core/MPU6050/driver/stm32L Core/MPU6050/mllite Core/MPU6050/eMPL-hal Core/MPU6050/mpl)#导入相对应的目录否则会include错误
+link_directories(Core/MPU6050/libmpllib)#链接静态库文件.a，放在include_directories下
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}.elf libmplmpu)#放在add_executable
 ```
 
 在以下宏定义中选择合适的全局宏定义：
