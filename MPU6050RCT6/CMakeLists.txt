@@ -47,8 +47,12 @@ else ()
 endif ()
 
 include_directories(Core/Inc Drivers/STM32F1xx_HAL_Driver/Inc Drivers/STM32F1xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F1xx/Include Drivers/CMSIS/Include)
+include_directories(Core/MPU6050 Core/MPU6050/driver/eMPL Core/MPU6050/driver/include Core/MPU6050/driver/stm32L Core/MPU6050/mllite Core/MPU6050/eMPL-hal Core/MPU6050/mpl)#导入相对应的目录否则会include错误
+link_directories(Core/MPU6050/libmpllib)#链接静态库文件.a
 
 add_definitions(-DSTM32F103xE -DUSE_HAL_DRIVER -DDEBUG)
+add_definitions(-DMPL_LOG_NDEBUG=1 -DMPU6050 -DEMPL -DUSE_DMP -DEMPL_TARGET_STM32F4)#定义全局宏变量，按照下面的说明修改
+
 
 file(GLOB_RECURSE SOURCES "Core/*.*" "Drivers/*.*")
 
@@ -59,6 +63,7 @@ add_link_options(-mcpu=cortex-m3 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}.elf libmplmpu)#Gideon
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)

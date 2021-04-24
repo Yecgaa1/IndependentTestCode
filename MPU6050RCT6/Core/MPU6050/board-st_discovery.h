@@ -7,4 +7,5 @@ int get_tick_count(unsigned long *count);
 void mdelay(unsigned long nTime);
 void mpu_test(void);
 void gyro_data_ready_cb(void);
+void read_from_mpl(void);
 #endif	/* ST_DISCOVERY_BOARD_H */
