@@ -1,2 +1,5 @@
 [submodule "DMA"]
 	url = https://github.com/Yecgaa1/DMA.git
+[submodule "STM32_MPU6050_HAL_DMP"]
+	path = STM32_MPU6050_HAL_DMP
+	url = https://github.com/Yecgaa1/STM32_MPU6050_HAL_DMP.git
