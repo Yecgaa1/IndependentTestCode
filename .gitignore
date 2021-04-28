@@ -52,3 +52,5 @@ Mkfile.old
 dkms.conf
 MPU6050RCT6/cmake-build-debug
 WaterVolumeSensor/cmake-build-debug
+F103RCT6_I2CAddressFound/cmake-build-debug
+WaterPressureSensor/cmake-build-debug
