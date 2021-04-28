@@ -12,21 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20cb762f-c1bb-4600-87c6-23b639b91c29" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/OCD_MPU6050RCT6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Inc/stm32f1xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Inc/stm32f1xx_hal_conf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MPU6050/board-st_discovery.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MPU6050/board-st_discovery.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MPU6050/board-st_discovery.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MPU6050/board-st_discovery.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MPU6050/driver/eMPL/inv_mpu.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MPU6050/driver/eMPL/inv_mpu.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MPU6050RCT6.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/MPU6050RCT6.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MPU6050驱动/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/MPU6050驱动/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +41,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WaterVolumeSensor" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
@@ -105,6 +91,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

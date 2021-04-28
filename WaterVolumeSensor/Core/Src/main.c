@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -55,11 +56,19 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#ifdef __GNUC__
 
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+PUTCHAR_PROTOTYPE {
+    //注意下面第一个参数是&husart1，因为cubemx配置了串�?1自动生成�?
+    HAL_UART_Transmit(&huart1, (uint8_t *) &ch, 1, HAL_MAX_DELAY);
+    return ch;
+}
+
+#endif
 /* USER CODE END 0 */
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
 /**
   * @brief  The application entry point.
   * @retval int
@@ -90,9 +99,10 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
     HAL_TIM_Base_Start(&htim1);
-    HAL_TIM_Base_Start(&htim2);
+    //HAL_TIM_Base_Start(&htim2);
     HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
@@ -106,7 +116,6 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
-#pragma clang diagnostic pop
 
 /**
   * @brief System Clock Configuration
@@ -151,7 +160,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim == (&htim2))
     {
-        a=htim1.Instance->CNT;
+        a+=htim1.Instance->CNT;
         htim1.Instance->CNT=0;
     }
 }
