@@ -24,8 +24,8 @@
 #define B1IT EXTI0_IRQn
 #define B2IT EXTI9_5_IRQn
 
-extern uint16_t state;//默认封闭
-extern uint32_t amount;//ml
+extern struct state state;
+extern struct pid pid;
 extern bool flag;
 //变量命名上采用了A0对应B0对应关闭水路的状态,以此类推
 /*!
@@ -34,6 +34,11 @@ extern bool flag;
  * @return 0为成功,1为错误
  */
 bool SteeringValve(uint16_t st);
-
+/*!
+ * 进行抽水或排水工作
+ * @param depth 目标深度
+ * @return
+ */
+bool Launch(float depth);
 
 #endif //FIRSTBUOYANCYCABIN_PUMP_H

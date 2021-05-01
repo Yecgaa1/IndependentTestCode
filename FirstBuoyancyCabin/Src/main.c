@@ -18,6 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+
 #include "main.h"
 #include "i2c.h"
 #include "tim.h"
@@ -27,6 +28,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "pump.h"
+#include <ms5837.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -104,7 +107,7 @@ int main(void)
 
     TIM2->CCR1=2000;
     TIM2->CCR2=2000;//预设的占空比
-
+    prom();
 
 
     HAL_TIM_Base_Start(&htim1);
@@ -172,7 +175,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         if(state==IN)amount+=htim1.Instance->CNT;
         else amount-=htim1.Instance->CNT;
         htim1.Instance->CNT=0;
+        convert();//深度计算
     }
+
 }
 /* USER CODE END 4 */
 

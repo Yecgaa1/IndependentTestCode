@@ -12,7 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20cb762f-c1bb-4600-87c6-23b639b91c29" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/pump.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/pump.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/pump.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/pump.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +57,19 @@
     </key>
   </component>
   <component name="RunManager" selected="OpenOCD 下载并运行.OCD MPU6050RCT6">
-    <configuration name="MPU6050RCT6.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MPU6050RCT6" TARGET_NAME="MPU6050RCT6.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MPU6050RCT6" RUN_TARGET_NAME="MPU6050RCT6.elf">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MPU6050RCT6.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MPU6050RCT6" TARGET_NAME="MPU6050RCT6.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MPU6050RCT6" RUN_TARGET_NAME="MPU6050RCT6.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="MPU6050RCT6.elf" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MPU6050RCT6" TARGET_NAME="MPU6050RCT6.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="MPU6050RCT6" RUN_TARGET_NAME="MPU6050RCT6.elf">
@@ -81,6 +87,16 @@
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="20cb762f-c1bb-4600-87c6-23b639b91c29" name="默认变更列表" comment="" />
+      <created>1619846772681</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619846772681</updated>
+    </task>
+    <servers />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>

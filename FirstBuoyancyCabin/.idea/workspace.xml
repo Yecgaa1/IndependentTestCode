@@ -11,7 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7572e339-0518-487d-b13b-7ba2d20f66f3" name="默认变更列表" comment="" />
+    <list default="true" id="7572e339-0518-487d-b13b-7ba2d20f66f3" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/pump.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/pump.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/pump.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/pump.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MPU6050RCT6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MPU6050RCT6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MPU6050RCT6/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MPU6050RCT6/CMakeLists.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +50,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -90,7 +98,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Src/main.c</url>
-          <line>117</line>
+          <line>120</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
