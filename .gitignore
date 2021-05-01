@@ -58,3 +58,7 @@ WaterPressureSensor/cmake-build-debug
 DepthSensor/cmake-build-debug
 
 FirstBuoyancyCabin/cmake-build-debug
+
+PWM/cmake-build-debug
+
+PWM/cmake-build-debug-/

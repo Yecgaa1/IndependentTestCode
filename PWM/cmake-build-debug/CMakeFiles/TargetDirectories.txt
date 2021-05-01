@@ -1,3 +1,0 @@
-C:/GitProject/Boat/IndependentTestCode/PWM/cmake-build-debug/CMakeFiles/PWM.elf.dir
-C:/GitProject/Boat/IndependentTestCode/PWM/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitProject/Boat/IndependentTestCode/PWM/cmake-build-debug/CMakeFiles/rebuild_cache.dir

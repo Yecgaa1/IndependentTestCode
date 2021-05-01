@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "pump.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,6 +49,8 @@
 
 /* USER CODE END PV */
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "EndlessLoop"
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
@@ -94,15 +96,32 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+    HAL_NVIC_DisableIRQ(EXTI0_IRQn);
+    HAL_NVIC_DisableIRQ(EXTI1_IRQn);
+    HAL_NVIC_DisableIRQ(EXTI2_IRQn);
+    HAL_NVIC_DisableIRQ(EXTI4_IRQn);
+    HAL_NVIC_DisableIRQ(EXTI9_5_IRQn);//默认先关闭所有IT
+
+    TIM2->CCR1=2000;
+    TIM2->CCR2=2000;//预设的占空比
+
+
+
     HAL_TIM_Base_Start(&htim1);
     HAL_TIM_Base_Start_IT(&htim2);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+    uint16_t st=3;
   while (1)
   {
-
+    if(st!=3)//仅供测试,需要调试状态下手动修改
+    {
+        SteeringValve(st);
+        st=3;
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -148,9 +167,10 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if (htim == (&htim2))
+    if (htim == (&htim2))//水量计算
     {
-        a+=htim1.Instance->CNT;
+        if(state==IN)amount+=htim1.Instance->CNT;
+        else amount-=htim1.Instance->CNT;
         htim1.Instance->CNT=0;
     }
 }
@@ -189,3 +209,5 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+#pragma clang diagnostic pop

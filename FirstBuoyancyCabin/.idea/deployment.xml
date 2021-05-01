@@ -12,12 +12,8 @@
       <paths name="远程主机 (49645010-dabf-43a2-950a-6fed477ddf12)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/PWM" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
