@@ -68,6 +68,8 @@ void Error_Handler(void);
 #define A1_Pin GPIO_PIN_5
 #define A1_GPIO_Port GPIOA
 #define A1_EXTI_IRQn EXTI9_5_IRQn
+#define Pump_PWM_Pin GPIO_PIN_6
+#define Pump_PWM_GPIO_Port GPIOA
 #define B2_Pin GPIO_PIN_7
 #define B2_GPIO_Port GPIOA
 #define B2_EXTI_IRQn EXTI9_5_IRQn
@@ -80,8 +82,6 @@ void Error_Handler(void);
 #define A2_Pin GPIO_PIN_2
 #define A2_GPIO_Port GPIOB
 #define A2_EXTI_IRQn EXTI2_IRQn
-#define Pump_PWM_Pin GPIO_PIN_10
-#define Pump_PWM_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

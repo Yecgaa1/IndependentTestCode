@@ -18,8 +18,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
 #include "main.h"
+#include "dma.h"
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
@@ -29,6 +29,8 @@
 /* USER CODE BEGIN Includes */
 #include "pump.h"
 #include <ms5837.h>
+#include <stdio.h>
+extern UART_HandleTypeDef huart1;   //声明串口
 
 /* USER CODE END Includes */
 
@@ -49,11 +51,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+extern struct state state;
 /* USER CODE END PV */
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
@@ -62,7 +62,16 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#ifdef __GNUC__
 
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+PUTCHAR_PROTOTYPE
+{
+    HAL_UART_Transmit(&huart1 ,(uint8_t*)&ch, 1, HAL_MAX_DELAY);
+    return ch;
+}
+#endif
 /* USER CODE END 0 */
 
 /**
@@ -93,11 +102,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
-  MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_I2C2_Init();
+  MX_TIM3_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
     HAL_NVIC_DisableIRQ(EXTI0_IRQn);
     HAL_NVIC_DisableIRQ(EXTI1_IRQn);
@@ -112,19 +124,27 @@ int main(void)
 
     HAL_TIM_Base_Start(&htim1);
     HAL_TIM_Base_Start_IT(&htim2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-    uint16_t st=3;
+    uint16_t st=3,i=0;
+    uint8_t send[]="Hello";
+    //HAL_UART_Transmit_DMA(&huart1,send,sizeof(send));
+
   while (1)
   {
-    if(st!=3)//仅供测试,需要调试状态下手动修改
+      printf("hello");
+    if(st!=3)//仅供测试,要调试状态下手动修改
     {
-        SteeringValve(st);
+        //SteeringValve(st);
         st=3;
     }
+
+      //convert();//深度计算
+      HAL_Delay(10);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -172,10 +192,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim == (&htim2))//水量计算
     {
-        if(state==IN)amount+=htim1.Instance->CNT;
-        else amount-=htim1.Instance->CNT;
+        if(IN == state.ValveState)state.amount+=htim1.Instance->CNT;
+        else state.amount-=htim1.Instance->CNT;
         htim1.Instance->CNT=0;
-        convert();//深度计算
+
     }
 
 }
@@ -214,5 +234,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-
-#pragma clang diagnostic pop

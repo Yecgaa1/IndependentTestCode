@@ -12,13 +12,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7572e339-0518-487d-b13b-7ba2d20f66f3" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstBuoyancyCabin.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/FirstBuoyancyCabin.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/i2c.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/i2c.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/ms5837.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/ms5837.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inc/pump.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/pump.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/stm32f1xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f1xx_hal_conf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f1xx_it.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/tim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inc/usart.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/gpio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/i2c.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/i2c.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/pump.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/pump.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MPU6050RCT6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MPU6050RCT6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MPU6050RCT6/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MPU6050RCT6/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f1xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/usart.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/.cproject" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/.cproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Inc/stm32f1xx_it.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/gpio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/stm32f1xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/PWM.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/PWM.ioc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +70,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -59,12 +79,17 @@
     </key>
   </component>
   <component name="RunManager" selected="OpenOCD 下载并运行.OCD FirstBuoyancyCabin">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="FirstBuoyancyCabin.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FirstBuoyancyCabin" TARGET_NAME="FirstBuoyancyCabin.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FirstBuoyancyCabin" RUN_TARGET_NAME="FirstBuoyancyCabin.elf">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -93,15 +118,15 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/main.c</url>
-          <line>120</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -6,11 +6,7 @@
 #include "pump.h"
 
 
-struct state {
-    uint16_t ValveState;//默认封闭
-    uint32_t amount;//ml
-    float depth;//目前目标深度,单位是cm!!
-} state;
+struct state state;
 struct pid {
     //5cm以上
     float kp5;

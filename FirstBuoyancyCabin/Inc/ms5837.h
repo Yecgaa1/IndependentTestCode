@@ -18,4 +18,5 @@
 void prom(void);
 void convert(void);
 
+extern float pressure,ctemp;
 #endif //DEPTHSENSOR_MS5837_H

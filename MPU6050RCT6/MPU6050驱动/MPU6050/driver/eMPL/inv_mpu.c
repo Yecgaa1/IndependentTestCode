@@ -161,6 +161,49 @@ static inline int reg_int_cb(struct int_param_s *int_param)
 #endif
 
 static int set_int_enable(unsigned char enable);
+int Sensors_I2C_WriteRegister(unsigned char slave_addr,
+                              unsigned char reg_addr,
+                              unsigned short len,
+                              const unsigned char *data_ptr)
+{
+    if(HAL_I2C_Mem_Write(&hi2c1 , slave_addr,reg_addr, I2C_MEMADD_SIZE_8BIT, (uint8_t *)data_ptr,len,1000)!= HAL_OK)
+    {
+        /* Writing process Error */
+        return HAL_ERROR;
+    }
+
+    while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY)
+    {
+    }
+
+    /* Check if the EEPROM is ready for a new operation */
+    while (HAL_I2C_IsDeviceReady(&hi2c1, slave_addr, 100, 100) == HAL_TIMEOUT);
+
+    /* Wait for the end of the transfer */
+    while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY)
+    {
+    }
+    return HAL_OK;
+}
+
+
+int Sensors_I2C_ReadRegister(unsigned char slave_addr,
+                             unsigned char reg_addr,
+                             unsigned short len,
+                             unsigned char *data_ptr)
+{
+    if (HAL_I2C_Mem_Read(&hi2c1 , slave_addr,reg_addr, I2C_MEMADD_SIZE_8BIT, (uint8_t *)data_ptr,len,1000) != HAL_OK)
+    {
+        /* Reading process Error */
+        return HAL_ERROR;
+    }
+
+    /* Wait for the end of the transfer */
+    while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY)
+    {
+    }
+    return HAL_OK;
+}
 
 /* Hardware registers needed by driver. */
 struct gyro_reg_s {

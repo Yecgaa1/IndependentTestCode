@@ -5,7 +5,7 @@
 #ifndef FIRSTBUOYANCYCABIN_PUMP_H
 #define FIRSTBUOYANCYCABIN_PUMP_H
 
-//#include <stdbool.h>
+#include <stdbool.h>
 //#include "stdio.h"
 #include <tim.h>
 
@@ -24,7 +24,11 @@
 #define B1IT EXTI0_IRQn
 #define B2IT EXTI9_5_IRQn
 
-extern struct state state;
+struct state {
+    uint16_t ValveState;//默认封闭
+    uint32_t amount;//ml
+    float depth;//目前目标深度,单位是cm!!
+};
 extern struct pid pid;
 extern bool flag;
 //变量命名上采用了A0对应B0对应关闭水路的状态,以此类推

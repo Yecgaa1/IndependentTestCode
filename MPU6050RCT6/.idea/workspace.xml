@@ -12,13 +12,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20cb762f-c1bb-4600-87c6-23b639b91c29" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C8T6PerformanceEvaluation/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AS5600/.idea/AS5600.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ESCTest/.idea/PWM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FirstFastBoat/.idea/FirstFastBoat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBus/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBus/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/FirstBuoyancyCabin.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/FirstBuoyancyCabin.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/i2c.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/i2c.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/main.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/ms5837.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/ms5837.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/pump.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/pump.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/stm32f1xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/stm32f1xx_hal_conf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/stm32f1xx_it.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/tim.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Inc/usart.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/gpio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/i2c.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/i2c.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/pump.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/pump.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/stm32f1xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/usart.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MPU6050驱动/MPU6050/driver/eMPL/inv_mpu.c" beforeDir="false" afterPath="$PROJECT_DIR$/MPU6050驱动/MPU6050/driver/eMPL/inv_mpu.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MPU6050驱动/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/MPU6050驱动/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/.cproject" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/.cproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Inc/stm32f1xx_it.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/gpio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/stm32f1xx_it.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/Core/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/Core/Src/tim.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PWM/PWM.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/../PWM/PWM.ioc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/.idea/SBus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/.idea/SBus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/.mxproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeASMCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/SBus.elf.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/SBus.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/SBus.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBus/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../SBus/cmake-build-debug/cmake_install.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +89,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1rZQN2RUwN5mCDB1AzX1aNUTOry" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,7 +105,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WaterVolumeSensor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FirstFastBoat" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
@@ -60,11 +118,6 @@
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="MPU6050RCT6.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MPU6050RCT6" TARGET_NAME="MPU6050RCT6.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MPU6050RCT6" RUN_TARGET_NAME="MPU6050RCT6.elf">
@@ -82,8 +135,8 @@
     </configuration>
     <list>
       <item itemvalue="CMake 应用程序.MPU6050RCT6.elf" />
-      <item itemvalue="OpenOCD 下载并运行.OCD MPU6050RCT6" />
       <item itemvalue="OpenOCD 下载并运行.MPU6050RCT6.elf" />
+      <item itemvalue="OpenOCD 下载并运行.OCD MPU6050RCT6" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />

@@ -18,9 +18,9 @@
 add_definitions(-DMPL_LOG_NDEBUG=1 -DMPU6050 -DEMPL -DUSE_DMP -DEMPL_TARGET_STM32F4)#定义全局宏变量，按照下面的说明修改
 
 include_directories(Core/MPU6050 Core/MPU6050/driver/eMPL Core/MPU6050/driver/include Core/MPU6050/driver/stm32L Core/MPU6050/mllite Core/MPU6050/eMPL-hal Core/MPU6050/mpl)#导入相对应的目录否则会include错误
-link_directories(Core/MPU6050/libmpllib)#链接静态库文件.a，放在include_directories下
+link_directories(Core/MPU6050/libmpllib)#链接静态库文件.a，放在file,include_directories下
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME}.elf libmplmpu)#放在add_executable
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}.elf libmplmpu)#放在add_executable后
 ```
 
 在以下宏定义中选择合适的全局宏定义：
@@ -53,10 +53,10 @@ EMPL_TARGET_STM32F4  （表示使用的是STMF系列，F1或者F7都是用这个
 
 （-D表示定义量，后面不需要加空格）
 
-### 第四步：
+### 第四步(已经预先做了)：
 
 在工程中编写底层I2C接口函数：
-
+建议在MPU6050/driver/eMPL/inv_mpu.c
 ~~~ c
 
 int Sensors_I2C_WriteRegister(unsigned char slave_addr,
@@ -104,7 +104,9 @@ int Sensors_I2C_ReadRegister(unsigned char slave_addr,
 }
 ~~~
 
-
+### 第五步:使用
+配置正常的I2C口(cubemx不需要改任何参数)
+和一个中断引脚用于获取dmp就绪的信号,该脚命名为MPU6050INT_Pin
 
 以及中断函数（我这里是使用了MPU6050的中断脚功能，所以要加上这个）
 
