@@ -47,19 +47,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-volatile uint8_t rx_len = 0;             //接收�??帧数据的长度
-volatile uint8_t recv_end_flag = 0;    //�??帧数据接收完成标�??
-uint8_t rx_buffer[200]={0};   //接收数据缓存
-#define BUFFER_SIZE 255
-typedef struct {
 
-    uint16_t rawdata[16];       //根据sbus协议，一帧包�?16通道，每通道11位（0-2047�?
-    uint8_t percent[16];        //我的天地飞遥控器实际rawdata范围�?340-1704，中间�??1024，这里还原遥控器的百分比
-    uint8_t flag_refresh;  //解析代码每次成功解析数据都会将此变量设为1，�?�择使用
-} rc_data_t;
-
-rc_data_t rc_data;
-static void sbus_decoder_get_frame(uint8_t* buf);
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

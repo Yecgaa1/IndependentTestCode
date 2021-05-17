@@ -681,7 +681,7 @@ void mpu_test(void)
 		unsigned short compass_fsr;
 #endif
 
-
+    HAL_Delay(5000);
     result = mpu_init(&int_param);
     if (result)
     {

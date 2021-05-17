@@ -119,7 +119,8 @@ int main(void)
 
     TIM2->CCR1=2000;
     TIM2->CCR2=2000;//预设的占空比
-    prom();
+    printf("Hello");
+    //prom();
 
 
     HAL_TIM_Base_Start(&htim1);

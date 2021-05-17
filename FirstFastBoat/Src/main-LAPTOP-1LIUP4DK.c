@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dma.h"
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
@@ -29,6 +28,9 @@
 /* USER CODE BEGIN Includes */
 #include <board-st_discovery.h>
 #include <string.h>
+#include <stdio.h>
+#include <sbus.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -38,6 +40,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define USART_REC_LEN  			100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,11 +51,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t USART1_RX_BUF[USART_REC_LEN]; //接收缓冲,�???大USART_REC_LEN个字�???.
+uint16_t USART1_RX_STA = 0; //接收状�?�标�???
+uint8_t aRxBuffer1[2];
+HAL_StatusTypeDef status=HAL_ERROR;
+SBUS_CH_Struct SBUS_CH;
 /* USER CODE END PV */
-
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -69,160 +73,189 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
-int main(void) {
-    /* USER CODE BEGIN 1 */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
 
-    /* USER CODE END 1 */
+  /* USER CODE END 1 */
 
-    /* MCU Configuration--------------------------------------------------------*/
+  /* MCU Configuration--------------------------------------------------------*/
 
-    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-    HAL_Init();
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
 
-    /* USER CODE BEGIN Init */
+  /* USER CODE BEGIN Init */
 
-    /* USER CODE END Init */
+  /* USER CODE END Init */
 
-    /* Configure the system clock */
-    SystemClock_Config();
+  /* Configure the system clock */
+  SystemClock_Config();
 
-    /* USER CODE BEGIN SysInit */
+  /* USER CODE BEGIN SysInit */
 
-    /* USER CODE END SysInit */
+  /* USER CODE END SysInit */
 
-    /* Initialize all configured peripherals */
-    MX_GPIO_Init();
-    MX_DMA_Init();
-    MX_USART1_UART_Init();
-    MX_I2C1_Init();
-    MX_USART2_UART_Init();
-    MX_TIM1_Init();
-    MX_TIM2_Init();
-    MX_I2C2_Init();
-    /* USER CODE BEGIN 2 */
-    __HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE); //启动串口收完数据后的闲时中断（开了自己不会默认停下）
-    HAL_UART_Receive_DMA(&huart2, rx_buffer, BUFFER_SIZE);
-    TIM1->CCR1 = 500;
-    TIM1->CCR2 = 500;
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_I2C1_Init();
+  MX_USART2_UART_Init();
+  MX_TIM1_Init();
+  MX_TIM2_Init();
+  MX_I2C2_Init();
+  MX_TIM3_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+    uint8_t send[]="Hello";
+    HAL_UART_Transmit(&huart1,send,sizeof(send),255);
+    //HAL_UART_Transmit(&huart1,send,sizeof(send),255);
+    HAL_Delay(1000);
+    HAL_UART_Receive_IT(&huart2,aRxBuffer1,1);
+    TIM1->CCR1 = 1500;
+    TIM1->CCR2 = 5000;
     TIM1->CCR3 = 500;
     TIM1->CCR4 = 500;
-
-    mpu_test();
+    //默认占空�?????
+    //mpu_test();//螺仪初始化，TODO：陀螺仪测试
     uint16_t command = 0, speed = 500;
-    /* USER CODE END 2 */
+    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+  /* USER CODE END 2 */
 
-    /* Infinite loop */
-    /* USER CODE BEGIN WHILE */
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
     while (1) {
-        if (recv_end_flag) {
-            if (rx_buffer[25] == 0x00 && rx_buffer[0] == 0x0f) {      //当前缓存数据满足0x0f开头且0x00结尾
-                //uint8_t buf_frame[25] = {0};
-                //memcpy(buf_frame, rx_buffer+q, 25-q);
-                //memcpy(buf_frame+25-q, buf, q);
-                sbus_decoder_get_frame(rx_buffer);
-                recv_end_flag = 0;
-                HAL_UART_Receive_DMA(&huart2, rx_buffer, BUFFER_SIZE);//重置size的计数！
-            }
-        }
-        if (command != 0) {
+
+
+        if (command != 0)//手动命令,swd修改
             switch (command) {
-                case (1):
+                case (1)://修改速度占空�???????????????
                     TIM1->CCR1 = speed;
                     TIM1->CCR2 = speed;
                     TIM1->CCR3 = speed;
                     TIM1->CCR4 = speed;
                     break;
-                case (2):
-                    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-                    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-                    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-                    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+                case (2)://�???????????????始尝试下�???????????????
+                    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+                    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+                    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+                    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
                     HAL_Delay(500);
-                    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
-                    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
-                    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
-                    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_4);
+                    HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_1);
+                    HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_2);
+                    HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_3);
+                    HAL_TIM_PWM_Stop(&htim1,TIM_CHANNEL_4);
                     break;
 
+
             }
-            command = 0;
-        }
 
-        /* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-        /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
     }
-    /* USER CODE END 3 */
+  /* USER CODE END 3 */
 }
 
 /**
   * @brief System Clock Configuration
   * @retval None
   */
-void SystemClock_Config(void) {
-    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-    /** Initializes the RCC Oscillators according to the specified parameters
-    * in the RCC_OscInitTypeDef structure.
-    */
-    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-    RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-    RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
-    RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-    RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
-    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
-        Error_Handler();
-    }
-    /** Initializes the CPU, AHB and APB buses clocks
-    */
-    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
-                                  | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
-    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
-        Error_Handler();
-    }
-    /** Enables the Clock Security System
-    */
-    HAL_RCC_EnableCSS();
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Enables the Clock Security System
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */
+uint16_t PPM_Sample_Cnt=0;
+uint32_t	 PPM_Time=0;
+uint16_t PPM_Okay=0;
+uint16_t PPM_Databuf[8]={0};
+int i=0;
+
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-    if (GPIO_Pin == MPU6050INT_Pin_Pin) {
+    if (GPIO_Pin == MPU6050INT_Pin_Pin) //mpu6050数据就绪
+    {
         gyro_data_ready_cb();
     }
+/*    else if(GPIO_Pin==PPM_Pin)
+    {
+        i++;
+        PPM_Time += TIM3->CNT;
+        printf("%lu",PPM_Time);
+        HAL_UART_Transmit(&huart1, (uint8_t *) PPM_Time, sizeof(PPM_Time), 255);
+        //HAL_UART_Transmit(&huart1, (uint8_t *) ("Get"), 100, 255);
+        TIM3->CNT = 0;				//读取完之后清空，该�?�每1us�?????????????1
+        if(PPM_Okay==1)
+        {
+            PPM_Sample_Cnt++;
+            PPM_Databuf[PPM_Sample_Cnt-1]=PPM_Time;
+            if(PPM_Sample_Cnt>=8)//接收�?????????????8通道
+                PPM_Okay=0;
+        }
+        if(PPM_Time>=2050)//确认是下�?????????????次数�?????????????
+        {
+            PPM_Okay=1;
+            PPM_Sample_Cnt=0;
+        }
+    }*/
 }
 
-static void sbus_decoder_get_frame(uint8_t *buf)        //传入一帧数据，解析成各个通道数据，一帧长度必然是25字节
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    rc_data.rawdata[0] = ((buf[1] | buf[2] << 8) & 0x07FF);
-    rc_data.rawdata[1] = ((buf[2] >> 3 | buf[3] << 5) & 0x07FF);
-    rc_data.rawdata[2] = ((buf[3] >> 6 | buf[4] << 2 | buf[5] << 10) & 0x07FF);
-    rc_data.rawdata[3] = ((buf[5] >> 1 | buf[6] << 7) & 0x07FF);
-    rc_data.rawdata[4] = ((buf[6] >> 4 | buf[7] << 4) & 0x07FF);
-    rc_data.rawdata[5] = ((buf[7] >> 7 | buf[8] << 1 | buf[9] << 9) & 0x07FF);
-    rc_data.rawdata[6] = ((buf[9] >> 2 | buf[10] << 6) & 0x07FF);
-    rc_data.rawdata[7] = ((buf[10] >> 5 | buf[11] << 3) & 0x07FF);
-    rc_data.rawdata[8] = ((buf[12] | buf[13] << 8) & 0x07FF);
-    rc_data.rawdata[9] = ((buf[13] >> 3 | buf[14] << 5) & 0x07FF);
-    rc_data.rawdata[10] = ((buf[14] >> 6 | buf[15] << 2 | buf[16] << 10) & 0x07FF);
-    rc_data.rawdata[11] = ((buf[16] >> 1 | buf[17] << 7) & 0x07FF);
-    rc_data.rawdata[12] = ((buf[17] >> 4 | buf[18] << 4) & 0x07FF);
-    rc_data.rawdata[13] = ((buf[18] >> 7 | buf[19] << 1 | buf[20] << 9) & 0x07FF);
-    rc_data.rawdata[14] = ((buf[20] >> 2 | buf[21] << 6) & 0x07FF);
-    rc_data.rawdata[15] = ((buf[21] >> 5 | buf[22] << 3) & 0x07FF);
-    uint8_t i;
-    for (i = 0; i < 16; i++) {
-        rc_data.percent[i] = (rc_data.rawdata[i] - 340) * 100 / (1704 - 340);//计算比例
+    int i
+    while(&huart2 == huart)
+    {
+        USART1_RX_BUF[USART1_RX_STA] = aRxBuffer1[0];
+        if (USART1_RX_STA == 0 && USART1_RX_BUF[USART1_RX_STA] != 0x0F)
+        {
+            HAL_UART_Receive_IT(&huart1,aRxBuffer`1,1);
+            break; //帧头不对，丢�???
+        }
+        USART1_RX_STA++;
+        if (USART1_RX_STA > USART_REC_LEN) USART1_RX_STA = 0;  ///接收数据错误,重新�???始接�???
+        if (USART1_RX_BUF[0] == 0x0F && USART1_RX_BUF[24] == 0x00 && USART1_RX_STA == 25)	//接受完一帧数�???
+        {
+            update_sbus(USART1_RX_BUF);
+            for (i = 0; i<25; i++)		//清空缓存�???
+                USART1_RX_BUF[i] = 0;
+            USART1_RX_STA = 0;
+        }
+        HAL_UART_Receive_IT(&huart1,aRxBuffer1,1);
+        break;
     }
-    rc_data.flag_refresh = 1;
 }
 /* USER CODE END 4 */
 
@@ -230,13 +263,14 @@ static void sbus_decoder_get_frame(uint8_t *buf)        //传入一帧数据，�
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
-void Error_Handler(void) {
-    /* USER CODE BEGIN Error_Handler_Debug */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
     /* User can add his own implementation to report the HAL error return state */
     __disable_irq();
     while (1) {
     }
-    /* USER CODE END Error_Handler_Debug */
+  /* USER CODE END Error_Handler_Debug */
 }
 
 #ifdef  USE_FULL_ASSERT
@@ -257,5 +291,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-
-#pragma clang diagnostic pop
