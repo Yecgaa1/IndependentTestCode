@@ -12,31 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f9d4768-98e0-46bf-9d18-215c38df7adf" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstBuoyancyCabin/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/.idea/runConfigurations/OCD_FirstFastBoat.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Drivers/MPU6050/board-st_discovery.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Drivers/MPU6050/board-st_discovery.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/FirstFastBoat.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/FirstFastBoat.ioc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/main.h.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/main.h.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/stm32f1xx_it.h.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/stm32f1xx_it.h.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/tim.h.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/Backup/tim.h.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/stm32f1xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/stm32f1xx_it.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Inc/tim.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Inc/tim.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/dma.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/dma.c.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/gpio.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/gpio.c.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/main-LAPTOP-1LIUP4DK.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/main-LAPTOP-1LIUP4DK.c.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/main.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/main.c.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/stm32f1xx_it.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/stm32f1xx_it.c.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/tim.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/tim.c.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/usart.c.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/Backup/usart.c.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/dma.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/dma.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/gpio.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/main-LAPTOP-1LIUP4DK.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/stm32f1xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/stm32f1xx_it.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstFastBoat/Src/usart.c" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstFastBoat/Src/usart.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +56,14 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RunManager" selected="OpenOCD 下载并运行.OCD RCT6Uart">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="RCT6Uart.elf" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RCT6Uart" TARGET_NAME="RCT6Uart.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="RCT6Uart" RUN_TARGET_NAME="RCT6Uart.elf">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="OCD RCT6Uart" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="RCT6Uart" TARGET_NAME="RCT6Uart.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="RCT6Uart" RUN_TARGET_NAME="RCT6Uart.elf">
@@ -97,6 +80,17 @@
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4f9d4768-98e0-46bf-9d18-215c38df7adf" name="默认变更列表" comment="" />
+      <created>1621346901883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621346901883</updated>
+      <workItem from="1621346903844" duration="32000" />
+    </task>
+    <servers />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -107,5 +101,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Src/main.c</url>
+          <line>105</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
