@@ -64,6 +64,22 @@ void Error_Handler(void);
 #define PPM_Pin GPIO_PIN_3
 #define PPM_GPIO_Port GPIOC
 #define PPM_EXTI_IRQn EXTI3_IRQn
+#define A1_Pin GPIO_PIN_4
+#define A1_GPIO_Port GPIOA
+#define A2_Pin GPIO_PIN_5
+#define A2_GPIO_Port GPIOA
+#define B1_Pin GPIO_PIN_7
+#define B1_GPIO_Port GPIOA
+#define B2_Pin GPIO_PIN_4
+#define B2_GPIO_Port GPIOC
+#define C1_Pin GPIO_PIN_5
+#define C1_GPIO_Port GPIOC
+#define C2_Pin GPIO_PIN_0
+#define C2_GPIO_Port GPIOB
+#define D1_Pin GPIO_PIN_1
+#define D1_GPIO_Port GPIOB
+#define D2_Pin GPIO_PIN_2
+#define D2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
