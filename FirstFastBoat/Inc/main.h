@@ -35,14 +35,16 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
+/* Export ed types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+#define USART_REC_LEN  			100
+extern uint8_t USART2_RX_BUF[100],aRxBuffer1[100],Sbus_flag;
+extern uint16_t USART2_RX_STA;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

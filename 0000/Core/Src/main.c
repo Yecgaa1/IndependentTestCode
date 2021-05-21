@@ -104,6 +104,7 @@ int main(void)
 	//SEGGER_RTT_printf(0,"Test%d   %s %x\n",000,"123",0x10); 
   while (1)
   {
+
     /* USER CODE END WHILE */
 		HAL_Delay(500);
 		SEGGER_RTT_printf(0,"ch1  %d   %s %x\n",SBUS_CH.CH1,"123",0x10);
