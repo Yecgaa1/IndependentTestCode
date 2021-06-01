@@ -50,10 +50,11 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, A1_Pin|A2_Pin|B1_Pin, GPIO_PIN_RESET);
-
+  HAL_GPIO_WritePin(GPIOA, A2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, A1_Pin|B1_Pin, GPIO_PIN_SET);//改了这句,将A1/B1设为高
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, B2_Pin|C1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, B2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, C1_Pin, GPIO_PIN_SET);//改了这两句,设C1为高
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, C2_Pin|D1_Pin|D2_Pin, GPIO_PIN_RESET);
