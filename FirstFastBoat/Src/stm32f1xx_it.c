@@ -19,12 +19,13 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include <sbus.h>
-#include <string.h>
+
 #include "main.h"
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <sbus.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,7 +62,6 @@
 extern TIM_HandleTypeDef htim2;
 extern DMA_HandleTypeDef hdma_usart2_rx;
 extern UART_HandleTypeDef huart2;
-
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -277,15 +277,15 @@ void USART2_IRQHandler(void)
             USART2_RX_BUF[USART2_RX_STA] = aRxBuffer1[0];
             if (USART2_RX_STA == 0 && USART2_RX_BUF[USART2_RX_STA] != 0x0F) {
                 HAL_UART_Receive_DMA(&huart2, aRxBuffer1, 100);
-                break; //帧头不对，丢�??????
+                break; //帧头不对，丢�???????
             }
             USART2_RX_STA++;
-            if (USART2_RX_STA > USART_REC_LEN) USART2_RX_STA = 0;  ///接收数据错误,重新�??????始接�??????
-            if (USART2_RX_BUF[0] == 0x0F && USART2_RX_BUF[24] == 0x00 && USART2_RX_STA == 25)    //接受完一帧数�??????
+            if (USART2_RX_STA > USART_REC_LEN) USART2_RX_STA = 0;  ///接收数据错误,重新�???????始接�???????
+            if (USART2_RX_BUF[0] == 0x0F && USART2_RX_BUF[24] == 0x00 && USART2_RX_STA == 25)    //接受完一帧数�???????
             {
                 update_sbus(USART2_RX_BUF);
                 memset(&USART2_RX_BUF,0,100);
-                /*for (int i = 0; i < 25; i++)        //清空缓存�??????
+                /*for (int i = 0; i < 25; i++)        //清空缓存�???????
                     USART2_RX_BUF[i] = 0;*/
                 USART2_RX_STA = 0;
                 Sbus_flag=1;

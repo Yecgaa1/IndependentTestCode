@@ -7,8 +7,8 @@ HeaderPath=Drivers\STM32F1xx_HAL_Driver\Inc;Drivers\STM32F1xx_HAL_Driver\Inc\Leg
 CDefines=USE_HAL_DRIVER;STM32F103xE;USE_HAL_DRIVER;USE_HAL_DRIVER;
 
 [PreviousGenFiles]
-HeaderPath=C:/GitProject/IndependentTestCode/FirstFastBoat/Inc
+HeaderPath=D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/FirstFastBoat/Inc
 HeaderFiles=gpio.h;dma.h;i2c.h;tim.h;usart.h;stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;
-SourcePath=C:/GitProject/IndependentTestCode/FirstFastBoat/Src
+SourcePath=D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/FirstFastBoat/Src
 SourceFiles=gpio.c;dma.c;i2c.c;tim.c;usart.c;stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;
 

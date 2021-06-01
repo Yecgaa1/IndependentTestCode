@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\0000.elf.dir/objects.a
+C:\ming8.1.0\mingw64\bin\ar.exe cr CMakeFiles\0000.elf.dir/objects.a @CMakeFiles\0000.elf.dir\objects1.rsp
+C:\ming8.1.0\mingw64\bin\g++.exe -g "-Wl,-gc-sections,--print-memory-usage,-Map=D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/0000/cmake-build-debug/0000.map" -mcpu=cortex-m3 -mthumb -mthumb-interwork -T "D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/0000/STM32F103C8TX_FLASH.ld" -Wl,--whole-archive CMakeFiles\0000.elf.dir/objects.a -Wl,--no-whole-archive -o 0000.elf.exe -Wl,--out-implib,lib0000.elf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\0000.elf.dir\linklibs.rsp

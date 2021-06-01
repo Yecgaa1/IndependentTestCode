@@ -1,0 +1,3 @@
+D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/0000/cmake-build-debug/CMakeFiles/0000.elf.dir
+D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/0000/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/OneDriveFile/bird/OneDrive - xutongxin/program/IndependentTestCode/0000/cmake-build-debug/CMakeFiles/rebuild_cache.dir

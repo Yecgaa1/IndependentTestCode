@@ -52,8 +52,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t USART2_RX_BUF[USART_REC_LEN]; //接收缓冲,�??????大USART_REC_LEN个字�??????.
-uint16_t USART2_RX_STA = 0; //接收状�?�标�??????
+uint8_t USART2_RX_BUF[USART_REC_LEN]; //接收缓冲,�???????????大USART_REC_LEN个字�???????????.
+uint16_t USART2_RX_STA = 0; //接收状�?�标�???????????
 uint8_t aRxBuffer1[100],Sbus_flag=0;
 HAL_StatusTypeDef status=HAL_ERROR;
 SBUS_CH_Struct SBUS_CH;
@@ -111,54 +111,99 @@ int main(void)
     HAL_UART_Transmit(&huart1,send,sizeof(send),255);
     //HAL_UART_Transmit(&huart1,send,sizeof(send),255);
     HAL_Delay(1000);
-    __HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE); //启动串口收完数据后的闲时中断（开了自己不会默认停下）
-    HAL_UART_Receive_DMA(&huart2,aRxBuffer1,100);//打开第一次接收
+    //__HAL_UART_ENABLE_IT(&huart2, UART_IT_IDLE); //启动串口收完数据后的闲时中断（开了自己不会默认停下）
+    //HAL_UART_Receive_DMA(&huart2,aRxBuffer1,100);//打开第一次接�?????
     //HAL_UART_Receive_IT(&huart2,aRxBuffer1,1);
-    TIM1->CCR1 = 5000;
-    TIM1->CCR2 = 5000;
-    TIM1->CCR3 = 500;
-    TIM1->CCR4 = 500;
-    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,0);
-    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,1);
-    //默认占空�????????
+    //TIM1->CCR1 = 0;
+    TIM1->CCR2 = 750;//改这�?
+    TIM1->CCR3 = 900;
+    TIM1->CCR4 = 900;
+    TIM3->CCR1=0;
+    HAL_GPIO_WritePin(A1_GPIO_Port,A1_Pin,0);
+    HAL_GPIO_WritePin(A2_GPIO_Port,A2_Pin,1);//L298N
+    HAL_GPIO_WritePin(B1_GPIO_Port,B1_Pin,0);
+    HAL_GPIO_WritePin(B2_GPIO_Port,B2_Pin,0);
+    HAL_GPIO_WritePin(C1_GPIO_Port,C1_Pin,0);
+    HAL_GPIO_WritePin(C2_GPIO_Port,C2_Pin,0);
+    HAL_GPIO_WritePin(D1_GPIO_Port,D1_Pin,0);
+    HAL_GPIO_WritePin(D2_GPIO_Port,D2_Pin,0);
+    //默认占空�?????????????
     //mpu_test();//螺仪初始化，TODO：陀螺仪测试
     uint16_t command = 0, speed = 500;
-    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+    //HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
+    HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+    HAL_Delay(3000);
+    for(int i=750;i<850;i++) { TIM1->CCR2 = i;
+        HAL_Delay(10);}
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+//    while(1){}
     while (1) {
 
         if(Sbus_flag)//如果sbus数据得到更新
         {
             Sbus_flag=0;
-            if(SBUS_CH.CH2>1550)
+            if(SBUS_CH.CH3>1500)
             {
-                TIM1->CCR1=(SBUS_CH.CH2-1550)/4.5/100*9999;
-                TIM1->CCR2=(SBUS_CH.CH2-1550)/4.5/100*9999;
-                TIM1->CCR3=(SBUS_CH.CH2-1550)/4.5/100*9999;
-                TIM1->CCR4=(SBUS_CH.CH2-1550)/4.5/100*9999;
+                if(SBUS_CH.CH3_Last<1500)
+                {
+                    TIM1->CCR1=0;
+                    TIM1->CCR2=0;
+                    TIM1->CCR3=0;
+                    TIM1->CCR4=0;
+                    HAL_Delay(2000);
+                }
+                HAL_GPIO_WritePin(A1_GPIO_Port,A1_Pin,1);
+                HAL_GPIO_WritePin(A2_GPIO_Port,A2_Pin,1);
+                HAL_GPIO_WritePin(B1_GPIO_Port,B1_Pin,0);
+                HAL_GPIO_WritePin(B2_GPIO_Port,B2_Pin,1);
+                HAL_GPIO_WritePin(C1_GPIO_Port,C1_Pin,0);
+                HAL_GPIO_WritePin(C2_GPIO_Port,C2_Pin,1);
+                HAL_GPIO_WritePin(D1_GPIO_Port,D1_Pin,0);
+                HAL_GPIO_WritePin(D2_GPIO_Port,D2_Pin,1);
+                TIM1->CCR1=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR2=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR3=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR4=(SBUS_CH.CH3-1550)/4.5/100*9999;
+
 
             }
-            else if(SBUS_CH.CH2<1450)
+            else if(SBUS_CH.CH3<1500)
             {
-                TIM1->CCR1=(1450-SBUS_CH.CH2)/4.5/100*9999;
-                TIM1->CCR2=(1450-SBUS_CH.CH2)/4.5/100*9999;
-                TIM1->CCR3=(1450-SBUS_CH.CH2)/4.5/100*9999;
-                TIM1->CCR4=(1450-SBUS_CH.CH2)/4.5/100*9999;
+                if(SBUS_CH.CH3_Last>1500)
+                {
+                    TIM1->CCR1=0;
+                    TIM1->CCR2=0;
+                    TIM1->CCR3=0;
+                    TIM1->CCR4=0;
+                    HAL_Delay(2000);
+                }
+
+                HAL_GPIO_WritePin(A1_GPIO_Port,A1_Pin,0);
+                HAL_GPIO_WritePin(A2_GPIO_Port,A2_Pin,1);
+                HAL_GPIO_WritePin(B1_GPIO_Port,B1_Pin,0);
+                HAL_GPIO_WritePin(B2_GPIO_Port,B2_Pin,1);
+                HAL_GPIO_WritePin(C1_GPIO_Port,C1_Pin,0);
+                HAL_GPIO_WritePin(C2_GPIO_Port,C2_Pin,1);
+                HAL_GPIO_WritePin(D1_GPIO_Port,D1_Pin,0);
+                HAL_GPIO_WritePin(D2_GPIO_Port,D2_Pin,1);
+                TIM1->CCR1=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR2=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR3=(SBUS_CH.CH3-1550)/4.5/100*9999;
+                TIM1->CCR4=(SBUS_CH.CH3-1550)/4.5/100*9999;
             }
+            SBUS_CH.CH3_Last=SBUS_CH.CH3;
         }
         if (command != 0)//手动命令,swd修改
             switch (command) {
-                case (1)://修改速度占空�??????????????????
-                    TIM1->CCR1 = speed;
-                    TIM1->CCR2 = speed;
-                    TIM1->CCR3 = speed;
-                    TIM1->CCR4 = speed;
-                    break;
-                case (2)://�??????????????????始尝试下�??????????????????
+                case (1)://修改速度占空�???????????????????????
+                    HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+                case (2)://�???????????????????????始尝试下�???????????????????????
                     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
                     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
                     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
@@ -241,15 +286,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
         printf("%lu",PPM_Time);
         HAL_UART_Transmit(&huart1, (uint8_t *) PPM_Time, sizeof(PPM_Time), 255);
         //HAL_UART_Transmit(&huart1, (uint8_t *) ("Get"), 100, 255);
-        TIM3->CNT = 0;				//读取完之后清空，该�?�每1us�????????????????1
+        TIM3->CNT = 0;				//读取完之后清空，该�?�每1us�?????????????????????1
         if(PPM_Okay==1)
         {
             PPM_Sample_Cnt++;
             PPM_Databuf[PPM_Sample_Cnt-1]=PPM_Time;
-            if(PPM_Sample_Cnt>=8)//接收�????????????????8通道
+            if(PPM_Sample_Cnt>=8)//接收�?????????????????????8通道
                 PPM_Okay=0;
         }
-        if(PPM_Time>=2050)//确认是下�????????????????次数�????????????????
+        if(PPM_Time>=2050)//确认是下�?????????????????????次数�?????????????????????
         {
             PPM_Okay=1;
             PPM_Sample_Cnt=0;
@@ -266,15 +311,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         if (USART2_RX_STA == 0 && USART2_RX_BUF[USART2_RX_STA] != 0x0F)
         {
             HAL_UART_Receive_IT(&huart2,aRxBuffer1,1);
-            break; //帧头不对，丢�??????
+            break; //帧头不对，丢�???????????
         }
         USART2_RX_STA++;
-        if (USART2_RX_STA > USART_REC_LEN) USART2_RX_STA = 0;  ///接收数据错误,重新�??????始接�??????
-        if (USART2_RX_BUF[0] == 0x0F && USART2_RX_BUF[24] == 0x00 && USART2_RX_STA == 25)	//接受完一帧数�??????
+        if (USART2_RX_STA > USART_REC_LEN) USART2_RX_STA = 0;  ///接收数据错误,重新�???????????始接�???????????
+        if (USART2_RX_BUF[0] == 0x0F && USART2_RX_BUF[24] == 0x00 && USART2_RX_STA == 25)	//接受完一帧数�???????????
         {
             update_sbus(USART2_RX_BUF);
             memset(&USART2_RX_BUF,0,100);
-            /*for (i = 0; i<25; i++)		//清空缓存�??????
+            /*for (i = 0; i<25; i++)		//清空缓存�???????????
                 USART2_RX_BUF[i] = 0;*/
             USART2_RX_STA = 0;
             Sbus_flag=1;

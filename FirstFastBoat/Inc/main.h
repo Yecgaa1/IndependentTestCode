@@ -35,7 +35,7 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-/* Export ed types ------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
 /* USER CODE END ET */
